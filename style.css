@@ -9,6 +9,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    overflow: hidden; /* Prevent scrollbars during animation */
 }
 
 .container {
@@ -18,37 +19,55 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 1s ease-in-out; /* Initial fade-in animation */
 }
 
 .site-title {
     font-size: 3em;
     font-weight: bold;
     margin-bottom: 20px;
+    animation: fadeInUp 1.2s ease-in-out; /* Slightly delayed fade-in */
 }
 
 h2 {
     font-size: 1.8em;
     margin-bottom: 20px;
+    animation: fadeInUp 1.4s ease-in-out; /* Even more delayed fade-in */
 }
 
 p {
     font-size: 1.2em;
     margin-bottom: 30px;
     line-height: 1.6;
+    animation: fadeInUp 1.6s ease-in-out; /* Last fade-in */
 }
 
 .contact-info {
     margin-top: 30px;
+    animation: fadeInUp 1.8s ease-in-out; /* Last fade-in */
 }
 
 .contact-info a {
     color: #fdbb2d;
     text-decoration: none;
+    transition: color 0.3s; /* Smooth color transition on hover */
 }
 
 .contact-info a:hover {
     text-decoration: underline;
     color: #e0ac1c;
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media (max-width: 500px) {

@@ -9,78 +9,65 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    overflow: hidden; /* Prevent scrollbars during animation */
+    overflow: hidden;
 }
 
-.container {
+.ribbon {
+    position: fixed; /* Stay in place */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    color: white;
     text-align: center;
-    max-width: 600px;
-    padding: 40px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: fadeInUp 1s ease-in-out; /* Initial fade-in animation */
+    padding: 10px 0;
+    cursor: pointer; /* Indicate it's clickable */
+    z-index: 1000; /* Ensure it's on top */
+    transition: transform 0.3s ease; /* Smooth transition for animation */
 }
 
-.site-title {
-    font-size: 3em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    animation: fadeInUp 1.2s ease-in-out; /* Slightly delayed fade-in */
-}
-
-h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    animation: fadeInUp 1.4s ease-in-out; /* Even more delayed fade-in */
-}
-
-p {
+.ribbon span {
     font-size: 1.2em;
-    margin-bottom: 30px;
-    line-height: 1.6;
-    animation: fadeInUp 1.6s ease-in-out; /* Last fade-in */
+    font-weight: bold;
+    animation: pulse 1.5s infinite alternate; /* Pulse animation */
 }
 
-.contact-info {
-    margin-top: 30px;
-    animation: fadeInUp 1.8s ease-in-out; /* Last fade-in */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
+    z-index: 1001; /* Above the ribbon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.contact-info a {
-    color: #fdbb2d;
-    text-decoration: none;
-    transition: color 0.3s; /* Smooth color transition on hover */
+.modal-content {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative; /* For close button positioning */
 }
 
-.contact-info a:hover {
-    text-decoration: underline;
-    color: #e0ac1c;
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #777;
 }
 
-/* Keyframes for animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/* ... (rest of your CSS) ... */
 
-@media (max-width: 500px) {
-    .container {
-        padding: 20px;
-    }
-    .site-title {
-        font-size: 2.5em;
-    }
-    h2 {
-        font-size: 1.5em;
-    }
-    p {
-        font-size: 1.1em;
-    }
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); } /* Slightly larger on pulse */
+    100% { transform: scale(1); }
 }

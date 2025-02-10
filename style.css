@@ -2,12 +2,81 @@ body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
     color: #fff;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
+    min-height: 100vh;
 }
 
+.container {
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-info a {
+    color: #fdbb2d;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: #e0ac1c;
+}
+
+#likeButton {
+    background-color: #fdbb2d;
+    color: #1a2a6c;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#likeCount {
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1.1em;
+    }
+    .logo {
+        width: 150px;
+    }
+}

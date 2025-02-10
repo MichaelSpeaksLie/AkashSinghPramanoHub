@@ -20,13 +20,14 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.logo {
-    width: 200px;
+.site-title {
+    font-size: 3em;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
-h1 {
-    font-size: 2.5em;
+h2 {
+    font-size: 1.8em;
     margin-bottom: 20px;
 }
 
@@ -50,33 +51,17 @@ p {
     color: #e0ac1c;
 }
 
-#likeButton {
-    background-color: #fdbb2d;
-    color: #1a2a6c;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-#likeCount {
-    margin-left: 10px;
-    font-size: 1.2em;
-}
-
 @media (max-width: 500px) {
     .container {
         padding: 20px;
     }
-    h1 {
-        font-size: 2em;
+    .site-title {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 1.5em;
     }
     p {
         font-size: 1.1em;
-    }
-    .logo {
-        width: 150px;
     }
 }

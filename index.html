@@ -67,14 +67,40 @@
     </section>
 
     <section>
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <div id="form-response"></div>  
     </section>
+
+    <script>
+    const form = document.getElementById('contactForm');
+    const responseDiv = document.getElementById('form-response');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(form);
+
+        fetch('YOUR_APPS_SCRIPT_URL', { // Replace with your Apps Script URL
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            responseDiv.innerHTML = data; // Display the response from Apps Script
+            form.reset(); // Clear the form
+        })
+        .catch(error => {
+            responseDiv.innerHTML = "An error occurred. Please try again later.";
+            console.error('Error:', error);
+        });
+    });
+</script>
 
     <script src="script.js"></script>
 </body>

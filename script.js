@@ -31,7 +31,7 @@ form.addEventListener('submit', (e) => {
 
     const formData = new FormData(form);
 
-    fetch('https://script.google.com/macros/s/AKfycbzz3ya0nA9kSKEPEd5Y3mkYfhJnvrfhaVjTQhinGSIDJC92HJyzSeaVk-q8t35flyRYog/exec', { // ***MAKE SURE THIS URL IS CORRECT***
+    fetch('https://script.google.com/macros/s/AKfycbzz3yaOnA9kSKePEd5Y3mkYfhJnvrfhaVjTQhinGSIDJC92HJyzSeaVk-q8t3SflyRYog/exec', { // ***MAKE SURE THIS URL IS CORRECT***
         method: 'POST',
         body: formData
     })

@@ -1,47 +1,43 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
-    color: #fff;
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+    background: #f9f9f9;
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    overflow: hidden;
+    padding: 20px;
+    color: #333;
 }
 
+/* Ribbon Styles */
 .ribbon {
-    position: fixed; /* Stay in place */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     text-align: center;
     padding: 10px 0;
-    cursor: pointer; /* Indicate it's clickable */
-    z-index: 1000; /* Ensure it's on top */
-    transition: transform 0.3s ease; /* Smooth transition for animation */
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
 }
 
 .ribbon span {
     font-size: 1.2em;
     font-weight: bold;
-    animation: pulse 1.5s infinite alternate; /* Pulse animation */
+    animation: pulse 1.5s infinite alternate;
 }
 
+
+/* Modal Styles */
 .modal {
-    display: none; /* Hidden by default */
+    display: none; /* Hidden initially */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent backdrop */
-    z-index: 1001; /* Above the ribbon */
-    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
     align-items: center;
     justify-content: center;
 }
@@ -52,7 +48,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    position: relative; /* For close button positioning */
+    position: relative;
 }
 
 .close-button {
@@ -68,6 +64,59 @@ body {
 
 @keyframes pulse {
     0% { transform: scale(1); }
-    50% { transform: scale(1.05); } /* Slightly larger on pulse */
+    50% { transform: scale(1.05); }
     100% { transform: scale(1); }
+}
+
+header, section { /* ... (rest of your styles) ... */
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* ... (rest of your CSS) ... */
+
+h1, h2 {
+    text-align: center;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.service {
+    background: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea, button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #0056b3;
 }

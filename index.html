@@ -77,30 +77,7 @@
     <div id="form-response"></div>  
     </section>
 
-    <script>
-    const form = document.getElementById('contactForm');
-    const responseDiv = document.getElementById('form-response');
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); // Prevent default form submission
-
-        const formData = new FormData(form);
-
-        fetch('https://script.google.com/macros/s/AKfycbzz3yaOnA9kSKePEd5Y3mkYfhJnvrfhaVjTQhinGSIDJC92HJyzSeaVk-q8t3SflyRYog/exec', { // Replace with your Apps Script URL
-            method: 'POST',
-            body: formData
-        })
-        .then(response => response.text())
-        .then(data => {
-            responseDiv.innerHTML = data; // Display the response from Apps Script
-            form.reset(); // Clear the form
-        })
-        .catch(error => {
-            responseDiv.innerHTML = "An error occurred. Please try again later.";
-            console.error('Error:', error);
-        });
-    });
-</script>
+   
 
     <script src="script.js"></script>
 </body>

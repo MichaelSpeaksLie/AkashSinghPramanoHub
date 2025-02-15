@@ -1,8 +1,8 @@
+// Modal and Ribbon Functionality
 const ribbon = document.getElementById('ribbon');
 const modal = document.getElementById('modal');
 const closeButton = document.getElementById('closeButton');
 
-// Show the modal on page load
 window.addEventListener('DOMContentLoaded', () => {
     modal.style.display = 'flex';
 });
@@ -21,7 +21,27 @@ window.addEventListener('click', (event) => {
     }
 });
 
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Thank you for contacting Premano Studio!');
+
+// Contact Form Submission
+const form = document.getElementById('contactForm');
+const responseDiv = document.getElementById('form-response');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch('https://script.google.com/macros/s/AKfycbzz3ya0nA9kSKEPEd5Y3mkYfhJnvrfhaVjTQhinGSIDJC92HJyzSeaVk-q8t35flyRYog/exec', { // ***MAKE SURE THIS URL IS CORRECT***
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        responseDiv.innerHTML = data;
+        form.reset();
+    })
+    .catch(error => {
+        responseDiv.innerHTML = "An error occurred. Please try again later.";
+        console.error('Error:', error);
+    });
 });

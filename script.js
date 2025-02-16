@@ -22,6 +22,7 @@ window.addEventListener('click', (event) => {
 });
 
 
+
 // Contact Form Submission
 const form = document.getElementById('contactForm');
 const responseDiv = document.getElementById('form-response');
@@ -31,7 +32,7 @@ form.addEventListener('submit', (e) => {
 
     const formData = new FormData(form);
 
-    fetch('https://script.google.com/macros/s/AKfycbzz3yaOnA9kSKePEd5Y3mkYfhJnvrfhaVjTQhinGSIDJC92HJyzSeaVk-q8t3SflyRYog/exec', { // ***MAKE SURE THIS URL IS CORRECT***
+    fetch('https://script.google.com/macros/s/AKfycbzz3ya0nA9kSKEPEd5Y3mkYfhJnvrfhaVjTQhinGSIDJC92HJyzSeaVk-q8t35flyRYog/exec', { // ***VERIFY THIS URL***
         method: 'POST',
         body: formData
     })
@@ -42,6 +43,6 @@ form.addEventListener('submit', (e) => {
     })
     .catch(error => {
         responseDiv.innerHTML = "An error occurred. Please try again later.";
-        console.error('Error:', error);
+        console.error('Error:', error); // Correct placement: inside the catch block
     });
 });

@@ -1,9 +1,8 @@
-// Modal and Ribbon Functionality (If applicable)
 const ribbon = document.getElementById('ribbon');
 const modal = document.getElementById('modal');
 const closeButton = document.getElementById('closeButton');
 
-if (ribbon && modal && closeButton) { // Check if elements exist before adding listeners
+if (ribbon && modal && closeButton) {
     window.addEventListener('DOMContentLoaded', () => {
         modal.style.display = 'flex';
     });
@@ -23,14 +22,12 @@ if (ribbon && modal && closeButton) { // Check if elements exist before adding l
     });
 }
 
-
-// Contact Form Submission
 const form = document.getElementById('contactForm');
 const responseDiv = document.getElementById('form-response');
 
-if (form && responseDiv) { // Check if form and response div exist
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+if (form && responseDiv) {
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
 
         const formData = new FormData(form);
 

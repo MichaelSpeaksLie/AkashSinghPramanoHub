@@ -120,3 +120,31 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+
+.contact-button {
+    display: inline-block; /* Make it behave like a block element */
+    padding: 10px 20px; /* Adjust padding as needed */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    text-decoration: none; /* Remove underline from link */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    font-weight: bold; /* Make the text bold */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+.contact-button:hover {
+    background-color: #333; /* Darker black on hover */
+    transform: translateY(-2px); /* Move slightly up on hover */
+    animation: shake 0.5s; /* Apply shake animation */
+    animation-iteration-count: 1; /* Shake only once */
+}
+
+@keyframes shake {
+    0% { transform: translate(0, -2px); }
+    25% { transform: translate(2px, -2px); }
+    50% { transform: translate(-2px, -2px); }
+    75% { transform: translate(2px, -2px); }
+    100% { transform: translate(0, -2px); }
+}

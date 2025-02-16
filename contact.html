@@ -8,43 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-        <header>
-        <h1>Pramano Hub</h1>  
-            <nav>
-            <center><a href="index.html" class="contact-button">Home</a>  </center>
-
-<style>
-.contact-button {
-    display: block; /* Make it a block element to center */
-    margin: 20px auto; /* Center horizontally */
-    padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-weight: bold;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    text-align: center; /* Center text within the button */
-    width: fit-content; /* Adjust width to content */
-}
-
-.contact-button:hover {
-    background-color: #333;
-    transform: translateY(-2px);
-    animation: shake 0.5s;
-    animation-iteration-count: 1;
-}
-
-@keyframes shake {
-    0% { transform: translate(0, -2px); }
-    25% { transform: translate(2px, -2px); }
-    50% { transform: translate(-2px, -2px); }
-    75% { transform: translate(2px, -2px); }
-    100% { transform: translate(0, -2px); }
-}
-</style>  </nav>
-            
+    <header>
+        <h1>Pramano Hub</h1>
+        <nav>
+            <center><a href="index.html" class="contact-button">Home</a></center>
+        </nav>
         <center><p>Empowering Brands with Web Development, Brand Identity & PPT Design</p></center>
     </header>
 
@@ -70,55 +38,6 @@
         </div>
     </section>
 
-    <script>
-        const form = document.getElementById('contactForm');
-        const responseDiv = document.getElementById('form-response');
-        const formContainer = document.getElementById('form-container');
-
-        if (form && responseDiv && formContainer) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                // Clear previous response
-                responseDiv.innerHTML = ""; // Clear the response div
-
-                form.elements.name.disabled = true;
-                form.elements.email.disabled = true;
-                form.elements.message.disabled = true;
-                form.elements.submit.disabled = true;
-
-                responseDiv.innerHTML = "<p>Sending your message...</p>";
-
-                const formData = new FormData(form);
-
-                fetch('https://script.google.com/macros/s/AKfycbzz3yaOnA9kSKePEd5Y3mkYfhJnvrfhaVjTQhinGSIDJC92HJyzSeaVk-q8t3SflyRYog/exec', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.text())
-                .then(data => {
-                    responseDiv.innerHTML = data;
-
-                    if (data.includes("Thank you")) {
-                        formContainer.innerHTML = "<p>Thank you for your message! We will get back to you shortly.</p>";
-                    } else {
-                        form.elements.name.disabled = false;
-                        form.elements.email.disabled = false;
-                        form.elements.message.disabled = false;
-                        form.elements.submit.disabled = false;
-                    }
-                })
-                .catch(error => {
-                    responseDiv.innerHTML = "An error occurred. Please try again later.";
-                    console.error('Error:', error);
-
-                    form.elements.name.disabled = false;
-                    form.elements.email.disabled = false;
-                    form.elements.message.disabled = false;
-                    form.elements.submit.disabled = false;
-                });
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

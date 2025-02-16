@@ -218,30 +218,3 @@ button:hover {
     }
 }
 
-/* ... (Your existing CSS) ... */
-
-/* Style for the navigation links in general */
-nav a {
-    display: inline-block;
-    margin: 0 10px; /* Adjust spacing between links */
-    text-decoration: none; /* Remove underlines */
-    color: #333; /* Set initial color */
-    font-weight: bold; /* Make the text bold */
-    padding: 10px 20px; /* Consistent padding */
-    border-radius: 5px; /* Consistent rounded corners */
-    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease; /* Smooth transitions for all properties */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
-    background-color: #fff; /* White background by default */
-    border: 1px solid #ccc; /* Add a border */
-}
-
-nav a:hover {
-    background-color: #f0f0f0; /* Light gray on hover */
-    transform: translateY(-2px); /* Move slightly up on hover */
-    color: #007bff; /* Blue color on hover */
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25); /* More prominent shadow on hover */
-    border-color: #007bff; /* Blue border on hover */
-}
-
-/* Style specifically for the contact button (if needed) */
-.contact-button { /* ... (Your existing .contact-button styles) ... */ }

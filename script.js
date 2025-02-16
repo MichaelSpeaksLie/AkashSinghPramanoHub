@@ -1,10 +1,34 @@
-// ... (Your modal and ribbon code, if any) ...
+// Modal and Ribbon Functionality (If applicable)
+const ribbon = document.getElementById('ribbon');
+const modal = document.getElementById('modal');
+const closeButton = document.getElementById('closeButton');
 
-// Contact Form Submission (This code will now only run on contact.html)
-const form = document.getElementById('contactForm'); // Check if form exists
-if (form) { // Only add event listener if the form is on the page
-    const responseDiv = document.getElementById('form-response');
+if (ribbon && modal && closeButton) { // Check if elements exist before adding listeners
+    window.addEventListener('DOMContentLoaded', () => {
+        modal.style.display = 'flex';
+    });
 
+    ribbon.addEventListener('click', () => {
+        modal.style.display = 'flex';
+    });
+
+    closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    });
+}
+
+
+// Contact Form Submission
+const form = document.getElementById('contactForm');
+const responseDiv = document.getElementById('form-response');
+
+if (form && responseDiv) { // Check if form and response div exist
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 

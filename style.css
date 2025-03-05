@@ -299,17 +299,18 @@ button:hover {
 /* Footer animations */
 /* Footer styles */
 footer {
-    background-color: #222; 
+    background-color: #222;
     color: #fff;
-    padding: 40px 20px; 
-    font-family: 'Poppins', sans-serif; 
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
     width: 100%;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); 
-    overflow: hidden; 
-    animation: fadeIn 1s ease-in-out; 
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
 
-.footer-inner { 
-    max-width: 900px; 
+.footer-inner {
+    max-width: 900px;
     margin: 0 auto;
     position: relative;
 }
@@ -323,12 +324,24 @@ footer {
     top: 15px;
     right: 0;
     font-size: 0.8em;
-    color: #999; 
+    color: #999;
+}
 
-.designer {
-    font-size: 1em;
-    color: #ddd;
-    margin-top: 10px; 
+.designer-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #e25050;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.designer-button:hover {
+    background-color: #d93f3f;
 }
 
 .copyright {
@@ -343,25 +356,24 @@ footer::before {
     left: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(to right, transparent, #999, transparent); 
+    background: linear-gradient(to right, transparent, #999, transparent);
     animation: slideRight 3s infinite;
 }
 
-/* ... other styles ... */
-
-.designer-button {
-    display: inline-block; 
-    padding: 8px 16px; 
-    background-color: #e25050; 
-    color: white;
-    text-decoration: none;
-    border-radius: 5px; 
-    font-weight: bold;
-    transition: background-color 0.3s ease; 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.designer-button:hover {
-    background-color: #d93f3f; 
+@keyframes slideRight {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+}
+
+.footer-content:hover {
+    transform: translateY(-3px);
+    transition: transform 0.3s ease;
 }
 
 

@@ -296,10 +296,72 @@ button:hover {
 }
 
 /* Footer styles (if you have one) */
+/* Footer animations */
+/* Footer styles */
 footer {
-    margin-top: auto; /* Push footer to the bottom */
-    text-align: center;
-    padding: 20px;
-    background-color: #343a40; /* Dark gray background */
-    color: #fff; /* White text */
+    background-color: #222; 
+    color: #fff;
+    padding: 40px 20px; 
+    font-family: 'Poppins', sans-serif; 
+    width: 100%;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+    animation: fadeIn 1s ease-in-out; 
+
+.footer-inner { 
+    max-width: 900px; 
+    margin: 0 auto;
+    position: relative;
 }
+
+.footer-content {
+    text-align: center;
+}
+
+.version {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    font-size: 0.8em;
+    color: #999; 
+
+.designer {
+    font-size: 1em;
+    color: #ddd;
+    margin-top: 10px; 
+}
+
+.copyright {
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #999, transparent); 
+    animation: slideRight 3s infinite;
+}
+
+/* ... other styles ... */
+
+.designer-button {
+    display: inline-block;
+    padding: 8px 16px; 
+    background-color: #e25050; 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px; 
+    font-weight: bold;
+    transition: background-color 0.3s ease; 
+}
+
+.designer-button:hover {
+    background-color: #d93f3f; 
+}
+
+/*Footer ends here*/

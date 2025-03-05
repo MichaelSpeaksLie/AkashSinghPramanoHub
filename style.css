@@ -350,7 +350,7 @@ footer::before {
 /* ... other styles ... */
 
 .designer-button {
-    display: inline-block;
+    display: inline-block; 
     padding: 8px 16px; 
     background-color: #e25050; 
     color: white;
@@ -363,5 +363,6 @@ footer::before {
 .designer-button:hover {
     background-color: #d93f3f; 
 }
+
 
 /*Footer ends here*/

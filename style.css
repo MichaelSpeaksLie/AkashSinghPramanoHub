@@ -78,7 +78,7 @@ body {
 
 /* Styles for the header */
 header {
-    background-image: url('assests/bg_home_1.png');
+    background-image: url('assets/bg_home_1.png');
     background-size: cover;
     background-position: center;
     color: #fff;
@@ -151,7 +151,7 @@ nav a:hover {
     text-align: center;
     margin-bottom: 40px;
     padding: 40px 20px;
-    background-image: url('assests/bg_about_us.png');
+    background-image: url('assets/bg_about_us.png');
     color: white;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -295,9 +295,9 @@ button:hover {
     color: #333;
 }
 
-/* Footer styles (if you have one) */
-/* Footer animations */
-/* Footer styles */
+
+
+/*Footer starts just right here baby*/
 footer {
     background-color: #222;
     color: #fff;
@@ -306,6 +306,7 @@ footer {
     width: 100%;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    position: relative;
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -313,35 +314,14 @@ footer {
     max-width: 900px;
     margin: 0 auto;
     position: relative;
-}
-
-.footer-content {
     text-align: center;
 }
 
-.version {
-    position: absolute;
-    top: 15px;
-    right: 0;
-    font-size: 0.8em;
-    color: #999;
-}
-
-.designer-button {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #e25050;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.designer-button:hover {
-    background-color: #d93f3f;
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Small spacing between elements */
 }
 
 .copyright {
@@ -349,11 +329,39 @@ footer {
     color: #aaa;
 }
 
+.designer-text {
+    font-size: 0.9em;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Spacing between text and logo */
+}
+
+.linkedin-logo {
+    width: 18px;  /* Adjust the size to match text */
+    height: auto;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+.linkedin-logo:hover {
+    transform: scale(1.1);
+}
+
+.version {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 0.8em;
+    color: #999;
+}
+
+/* Animated gradient underline */
 footer::before {
     content: '';
     position: absolute;
     bottom: 0;
-    left: -100%;
+    left: 0;
     width: 100%;
     height: 2px;
     background: linear-gradient(to right, transparent, #999, transparent);
@@ -367,14 +375,8 @@ footer::before {
 
 @keyframes slideRight {
     0% { left: -100%; }
-    50% { left: 100%; }
+    50% { left: 50%; }
     100% { left: 100%; }
 }
 
-.footer-content:hover {
-    transform: translateY(-3px);
-    transition: transform 0.3s ease;
-}
-
-
-/*Footer ends here*/
+/*Footer Ends just right here baby*/

@@ -23,4 +23,13 @@ if (ribbon && modal && closeButton) {
     });
 }
 
+// URL Management: Remove .html from URLs
+document.addEventListener('DOMContentLoaded', () => {
+    let path = window.location.pathname;
 
+    // If the URL ends with .html, remove it and update history
+    if (path.endsWith('.html')) {
+        let newPath = path.replace('.html', '');
+        window.history.replaceState(null, '', newPath);
+    }
+});

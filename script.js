@@ -33,3 +33,23 @@ document.addEventListener('DOMContentLoaded', () => {
         window.history.replaceState(null, '', newPath);
     }
 });
+
+
+// To handle home button redirection and url thing...
+document.addEventListener('DOMContentLoaded', () => {
+    let homeButton = document.getElementById('homeButton');
+
+    if (homeButton) {
+        homeButton.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default navigation
+            window.location.href = "/"; // Redirect to root
+        });
+    }
+
+    // Remove .html from the URL if present
+    let path = window.location.pathname;
+    if (path.endsWith('/index') || path.endsWith('/index.html')) {
+        let newPath = "/";
+        window.history.replaceState(null, '', newPath);
+    }
+});

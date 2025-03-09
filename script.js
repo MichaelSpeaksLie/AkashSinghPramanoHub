@@ -53,3 +53,17 @@ document.addEventListener('DOMContentLoaded', () => {
         window.history.replaceState(null, '', newPath);
     }
 });
+
+
+//Star Product animation
+
+function animateStarProduct() {
+    const starProduct = document.getElementById('starProductMessage');
+    starProduct.classList.add('animate');
+    setTimeout(() => {
+      starProduct.classList.remove('animate');
+    }, 800);
+  }
+  
+  animateStarProduct();
+  setInterval(animateStarProduct, 3000);

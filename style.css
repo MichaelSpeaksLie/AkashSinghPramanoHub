@@ -419,3 +419,38 @@ img {
 }
 
 /*Footer Ends just right here baby*/
+
+/* Star-Button */
+.star-product {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    padding: 8px 16px; /* Add padding for a button-like appearance */
+    border-radius: 20px; /* Rounded corners for a premium look */
+    background: linear-gradient(135deg, #E5E4E2, #B0B0B0); /* (Platinum to Silver) */
+    color: #333; /* Darker text for contrast */
+    font-weight: bold; /* Make the text bold */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    /*text-transform: uppercase;*/ /* Uppercase for emphasis */
+    letter-spacing: 1px; /* Add letter spacing */
+    font-size: 14px; /* Adjust font size */
+  }
+  
+  .star-product::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)); /* Brighter highlight */
+    transform: translateX(-100%);
+    transition: transform 0.7s ease-in-out;
+    border-radius: 20px; /* Match the main element's border radius */
+  }
+  
+  .star-product.animate::before {
+    transform: translateX(100%);
+  }
+  
+  /* star product animation ends */

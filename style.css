@@ -10,6 +10,7 @@ body {
     flex-direction: column;
     min-height: 100vh; /* Ensure body takes up full viewport height */
     transition: background-color 0.5s ease;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Styles for the ribbon */
@@ -215,9 +216,6 @@ nav a:hover {
     margin: 0; /* Remove default margin */
 }
 
-
-
-
 /* Styles for the contact section */
 #contact-section {
     padding: 40px;
@@ -296,8 +294,6 @@ button:hover {
     color: #333;
 }
 
-
-
 /*Footer starts just right here baby*/
 footer {
     background-color: #222;
@@ -339,7 +335,7 @@ footer {
 }
 
 .linkedin-logo {
-    width: 18px;  /* Adjust the size to match text */
+    width: 18px; /* Adjust the size to match text */
     height: auto;
     vertical-align: middle;
     transition: transform 0.3s ease;
@@ -380,18 +376,16 @@ footer::before {
     100% { left: 100%; }
 }
 
-
-
 /* Styles for screens smaller than 768px (tablets and phones) */
 @media (max-width: 768px) {
     body {
         font-size: 14px; /* Adjust font size */
     }
     .services {
-      grid-template-columns: 1fr; /* Stack services on small screens */
+        grid-template-columns: 1fr; /* Stack services on small screens */
     }
     header {
-      aspect-ratio: 1 / 1; /* Example change of aspect ratio */
+        aspect-ratio: 1 / 1; /* Example change of aspect ratio */
     }
 }
 
@@ -406,4 +400,22 @@ footer::before {
         text-align: center;
     }
 }
+
+/* Added to ensure all elements are within the viewport width */
+* {
+    box-sizing: border-box;
+}
+
+header,
+.services,
+#about-us,
+.services-container {
+    width: 100%;
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
 /*Footer Ends just right here baby*/
